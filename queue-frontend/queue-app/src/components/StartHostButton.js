@@ -1,10 +1,13 @@
+// import libraries
 import React from 'react';
-import Axios from 'axios';
-import '../App.css'
+import '../App.css';
+import {useNavigate} from 'react-router-dom';
 
-function StartHostButton({sessID}) {
-    const handleClick = async() => {
-        console.log('button clicked')
+// button to start hosting
+function StartHostButton() {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/login');
     };
 
     return (

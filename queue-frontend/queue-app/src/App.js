@@ -1,21 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import StartHostButton from './components/StartHostButton.js'
+
+// import libraries
+import axios from 'axios';
+import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+// importing pages
+import HomePage from './pages/HomePage.js';
+import LoginPage from './pages/LoginPage.js';
 
 function App() {
-
   return (
-    <div className="App">
-      <header>
-        <title>CoQueue</title>
-      </header>
-      <header className="App-header">
-        <h1>
-          CoQueue: A Cross-Platform Shared Music Queue
-        </h1>
-        <StartHostButton sessID="123"/>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
+      </Routes>
+    </Router>
   );
 }
 

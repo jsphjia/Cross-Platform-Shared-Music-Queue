@@ -32,9 +32,8 @@ server.post('/session', (req, res) => {
 server.post('/session/:id/track', (req, res) => {
   const sessID = req.params.id;
   const {title, artist} = req.body;
-
   sessions[sessID].push({title, artist}); // add song to queue
-  res.json({message: 'Track ${title} added to session ${sessID}'})
+  res.json({message: 'Track ${title} added to session ${sessID}'});
 });
 
 /**
