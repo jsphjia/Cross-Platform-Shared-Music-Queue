@@ -1,15 +1,6 @@
-const { createServer } = require('node:http');
-
 const express = require('express');
 const cors = require('cors');
-const hostname = '127.0.0.1';
-const port = 3000;
-
-// const server = createServer((req, res) => {
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello World');
-// });
+const port = process.env.PORT || 3000;
 
 const server = express();
 server.use(cors());
@@ -34,7 +25,7 @@ server.post('/session/:id/track', (req, res) => {
   const sessID = req.params.id;
   const {title, artist} = req.body;
   sessions[sessID].push({title, artist}); // add song to queue
-  res.json({message: 'Track ${title} added to session ${sessID}'});
+  res.json({message: `Track ${title} added to session ${sessID}`});
 });
 
 /**
@@ -59,6 +50,6 @@ server.get('/session/:id/queue', (req, res) => {
   res.json({queue});
 }) 
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+  console.log(`Server running at ${port}`);
 });

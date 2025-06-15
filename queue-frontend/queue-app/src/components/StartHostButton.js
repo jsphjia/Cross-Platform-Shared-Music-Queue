@@ -17,4 +17,4 @@ function StartHostButton() {
     );
 }
 
-export default StartHostButton
+export default StartHostButton;

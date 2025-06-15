@@ -7,7 +7,7 @@ function NowPlaying({sessID}) {
     const [track, setTrack] = useState(null);
   
     useEffect(() => {
-      axios.get('http://localhost:3000/session/${sessId}/next')
+      axios.get(`http://localhost:3000/session/${sessId}/next`)
         .then(res => setTrack(res.data.nextTrack))
         .catch(err => console.error('Failed to fetch the next track', err));
     }, [sessID]);
