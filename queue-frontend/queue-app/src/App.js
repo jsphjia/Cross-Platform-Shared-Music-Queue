@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import HomePage from './pages/HomePage.js';
 import LoginPage from './pages/LoginPage.js';
 import PartyPage from './pages/PartyPage.js';
+import StartPage from './pages/StartPage.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/start" element={<StartPage/>}/>
         <Route path="/party-share/:sessID" element={<PartyPage/>}/>
       </Routes>
     </Router>
