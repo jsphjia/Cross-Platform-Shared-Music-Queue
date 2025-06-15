@@ -43,7 +43,7 @@ server.get('/session/:id/next', (req, res) => {
   const sessID = req.params.id;
   const queue = sessions[sessID];
   if (!queue || queue.length == 0) {
-    return res.status(404).json(message: 'No tracks in queue');
+    return res.status(404).json({message: 'No tracks in queue'});
   }
   const next = queue[0];
   res.json({next});
