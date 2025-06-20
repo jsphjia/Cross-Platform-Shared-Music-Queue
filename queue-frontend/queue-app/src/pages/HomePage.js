@@ -1,5 +1,6 @@
 // import libraries
 import React from 'react';
+import { TypeAnimation } from 'react-type-animation';
 
 // import components
 import StartHostButton from './../components/StartHostButton.js';
@@ -12,7 +13,18 @@ function HomePage() {
                 <title>CoQueue: Home</title>
             </header>
             <header className="App-header">
-                <h1>CoQueue: A Cross-Platform Shared Music Queue</h1>
+                <h1>
+                    <TypeAnimation
+                        sequence={[
+                        'CoQueue: A Cross-Platform Shared Music Queue',
+                        1000, // pause after typing
+                        ]}
+                        wrapper="span"
+                        speed={50}
+                        cursor={true}
+                        repeat={0}
+                    />
+                </h1>
                 <StartHostButton/>
             </header>
         </div>
