@@ -7,8 +7,13 @@ import StartHostButton from './../components/StartHostButton.js';
 
 // home page
 function HomePage() {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/login');
+    };
+
     return (
-        <div className="App">
+        <div className="App" onClick={handleClick}>
             <header>
                 <title>CoQueue: Home</title>
             </header>
@@ -21,11 +26,10 @@ function HomePage() {
                         ]}
                         wrapper="span"
                         speed={50}
-                        cursor={true}
+                        cursor={false}
                         repeat={0}
                     />
                 </h1>
-                <StartHostButton/>
             </header>
         </div>
     );
